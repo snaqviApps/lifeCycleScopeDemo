@@ -26,13 +26,15 @@ class MainFragment : Fragment() {
         binding = FragmentMainBinding.inflate(layoutInflater)
         binding.tvFragment.text = "text changed dynamically"
 
-        viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
-        // TODO: Use the ViewModel
-        lifecycleScope.launch(Dispatchers.IO) {
-            Log.i("MyTag-Fragment","Thread name is : ${Thread.currentThread().name}")
+//        viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
+        viewModel = ViewModelProvider(this)[MainViewModel::class.java]      // using indexing operator
+
+        viewModel.users.observe(viewLifecycleOwner) {
+            binding.tvFragment.text = it?.toString()
+            Log.i("MyTag", "users: ${it.toString()}")
         }
 
-        return binding.root        // binding implementation
+        return binding.root
     }
 
 }

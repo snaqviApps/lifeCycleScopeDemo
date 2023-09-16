@@ -32,26 +32,6 @@ class MainActivity : AppCompatActivity() {
             delay(4100)
             mainBinding.progressBar.visibility = View.GONE
 
-
-            /**
-             *
-             * The below three Coroutines (scopes) replace the deprecated scopes of
-             *  1. lifecycleScope.launchWhenCreated
-             *  2. lifecycleScope.launchWhenStarted
-             *  3. lifecycleScope.launchWhenResumed
-             */
-            repeatOnLifecycle(Lifecycle.State.CREATED){
-
-            }
-
-            repeatOnLifecycle(Lifecycle.State.STARTED){
-
-            }
-
-            repeatOnLifecycle(Lifecycle.State.RESUMED){
-
-            }
-
         }
 
     }
