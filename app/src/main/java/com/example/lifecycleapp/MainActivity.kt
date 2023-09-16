@@ -9,7 +9,6 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.example.lifecycleapp.databinding.ActivityMainBinding
 import com.example.lifecycleapp.ui.MainFragment
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -32,17 +31,15 @@ class MainActivity : AppCompatActivity() {
             mainBinding.progressBar.visibility = View.VISIBLE
             delay(4100)
             mainBinding.progressBar.visibility = View.GONE
-        }
 
-        /**
-         *
-         * The below three Coroutines (scopes) replace the deprecated scopes of
-         *  1. lifecycleScope.launchWhenCreated
-         *  2. lifecycleScope.launchWhenStarted
-         *  3. lifecycleScope.launchWhenResumed
-         */
 
-        lifecycleScope.launch {
+            /**
+             *
+             * The below three Coroutines (scopes) replace the deprecated scopes of
+             *  1. lifecycleScope.launchWhenCreated
+             *  2. lifecycleScope.launchWhenStarted
+             *  3. lifecycleScope.launchWhenResumed
+             */
             repeatOnLifecycle(Lifecycle.State.CREATED){
 
             }
@@ -56,7 +53,6 @@ class MainActivity : AppCompatActivity() {
             }
 
         }
-
 
     }
 }
