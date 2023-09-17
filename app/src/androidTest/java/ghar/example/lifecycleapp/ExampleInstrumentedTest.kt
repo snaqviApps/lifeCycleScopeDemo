@@ -1,4 +1,4 @@
-package com.example.lifecycleapp
+package ghar.example.lifecycleapp
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

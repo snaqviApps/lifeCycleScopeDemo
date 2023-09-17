@@ -1,9 +1,10 @@
-package com.example.lifecycleapp
+package ghar.learn.lifecycleapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.lifecycleapp.R
 import com.example.lifecycleapp.databinding.ActivityMainBinding
-import com.example.lifecycleapp.ui.MainFragment
+import ghar.learn.lifecycleapp.ui.MainFragment
 
 class MainActivity : AppCompatActivity() {
     private lateinit var mainBinding : ActivityMainBinding

@@ -5,14 +5,15 @@
 <FrameLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context="ghar.learn.lifecycleapp.MainActivity">
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/mainFragmentId"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
-        android:name="com.example.lifecycleapp.ui.MainFragment" />
+        android:name="ghar.learn.lifecycleapp.ui.MainFragment"
+        tools:layout="@layout/fragment_main" />
 
 </FrameLayout>
 </layout>

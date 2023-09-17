@@ -1,4 +1,4 @@
-package com.example.lifecycleapp.ui
+package ghar.learn.lifecycleapp.ui
 
 import android.os.Bundle
 import android.util.Log

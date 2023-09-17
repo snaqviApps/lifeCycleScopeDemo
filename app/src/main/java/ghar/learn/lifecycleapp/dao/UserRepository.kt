@@ -1,9 +1,9 @@
-package com.example.lifecycleapp.dao
+package ghar.learn.lifecycleapp.dao
 
 import kotlinx.coroutines.delay
 
-class UserRepository() {
-    suspend fun getUsers() : List<User>{
+class UserRepository {
+    suspend fun getUsers() : List<User> {
         delay(5000)
         return listOf(
             User(5, "U5"),

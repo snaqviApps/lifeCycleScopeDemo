@@ -1,8 +1,8 @@
-package com.example.lifecycleapp.ui
+package ghar.learn.lifecycleapp.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
-import com.example.lifecycleapp.dao.UserRepository
+import ghar.learn.lifecycleapp.dao.UserRepository
 import kotlinx.coroutines.Dispatchers
 
 class MainViewModel : ViewModel() {
@@ -11,6 +11,8 @@ class MainViewModel : ViewModel() {
     /**
      * using this Interface 'LiveDataScope<T>' generates Coroutine-block
      * that controls live-data directly.
+     *
+     * @'getUsers()' is a suspended function
      */
     val users = liveData(Dispatchers.IO) {
         emit(repo.getUsers())

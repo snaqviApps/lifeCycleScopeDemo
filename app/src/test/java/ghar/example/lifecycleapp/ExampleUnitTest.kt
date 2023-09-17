@@ -1,4 +1,4 @@
-package com.example.lifecycleapp
+package ghar.example.lifecycleapp
 
 import org.junit.Test
 
