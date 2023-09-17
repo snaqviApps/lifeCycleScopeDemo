@@ -7,10 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.lifecycleScope
+import com.example.lifecycleapp.R
 import com.example.lifecycleapp.databinding.FragmentMainBinding
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
 class MainFragment : Fragment() {
     private lateinit var binding : FragmentMainBinding
@@ -24,14 +22,15 @@ class MainFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View {
         binding = FragmentMainBinding.inflate(layoutInflater)
-        binding.tvFragment.text = "text changed dynamically"
-
-//        viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
-        viewModel = ViewModelProvider(this)[MainViewModel::class.java]      // using indexing operator
-
-        viewModel.users.observe(viewLifecycleOwner) {
-            binding.tvFragment.text = it?.toString()
-            Log.i("MyTag", "users: ${it.toString()}")
+        binding.tvFragment.text = getString(R.string.text_value_populating_dynamically)
+        viewModel = ViewModelProvider(this)[MainViewModel::class.java]
+        binding.fragProgressBar.visibility = View.VISIBLE
+        viewModel.users.observe(viewLifecycleOwner) {users ->
+            users?.let {
+                binding.fragProgressBar.visibility = View.INVISIBLE
+                binding.tvFragment.text = "$it"
+                Log.i("MyTag", "users: $it")
+            }
         }
 
         return binding.root

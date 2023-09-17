@@ -10,18 +10,9 @@
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/mainFragmentId"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_gravity="center"
         android:name="com.example.lifecycleapp.ui.MainFragment" />
-
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyle"
-        android:visibility="gone"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="177dp"
-        tools:layout_editor_absoluteY="281dp" />
 
 </FrameLayout>
 </layout>
